@@ -11,11 +11,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val firstDT = firstDataClass ("Minga")
         findViewById<AppCompatButton>(R.id.btn).setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
-                Log.d("Test", "Нажата кнопка")
+                firstDT.clicking()
+                Log.d("Test", "Minga нажал кнопку ${firstDT.counter.toString()}й раз")
             }
-
         })
+    }
+
+    data class firstDataClass (var name: String) {
+        var counter = 0
+
+        fun clicking () {
+            this.counter += 1
+        }
     }
 }
