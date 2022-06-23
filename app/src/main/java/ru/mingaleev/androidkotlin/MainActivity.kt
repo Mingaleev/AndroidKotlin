@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val firstDT = firstDataClass ("Minga")
+        val firstDT = firstDataClass ("Minga", 0)
 
         findViewById<AppCompatButton>(R.id.btn).setOnClickListener {
             firstDT.clicking()
@@ -19,9 +19,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    data class firstDataClass (val name: String) {
-        var counter = 0
-
+    data class firstDataClass (val name: String, var counter: Int) {
         fun clicking () {
             this.counter += 1
         }
