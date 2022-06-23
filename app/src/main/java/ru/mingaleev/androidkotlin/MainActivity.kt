@@ -13,12 +13,10 @@ class MainActivity : AppCompatActivity() {
 
         val firstDT = firstDataClass ("Minga")
 
-        findViewById<AppCompatButton>(R.id.btn).setOnClickListener(object : View.OnClickListener{
-            override fun onClick(v: View?) {
-                firstDT.clicking()
-                Log.d("Test", "${firstDT.name} нажал кнопку ${firstDT.counter.toString()}й раз")
-            }
-        })
+        findViewById<AppCompatButton>(R.id.btn).setOnClickListener {
+            firstDT.clicking()
+            Log.d("Test", "${firstDT.name} нажал кнопку ${firstDT.counter.toString()}й раз")
+        }
     }
 
     data class firstDataClass (val name: String) {
