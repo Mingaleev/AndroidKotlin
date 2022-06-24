@@ -12,10 +12,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val firstDT = firstDataClass ("Minga", 0)
+        val secondDT = firstDT.copy("Artur", 1)
 
         findViewById<AppCompatButton>(R.id.btn).setOnClickListener {
-            firstDT.clicking()
-            Log.d("Test", "${firstDT.name} нажал кнопку ${firstDT.counter.toString()}й раз")
+            secondDT.clicking()
+            Log.d("Test", "${secondDT.name} нажал кнопку ${secondDT.counter.toString()}й раз")
         }
     }
 
