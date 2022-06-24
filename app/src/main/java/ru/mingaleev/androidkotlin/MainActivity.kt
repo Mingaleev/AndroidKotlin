@@ -1,8 +1,8 @@
 package ru.mingaleev.androidkotlin
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 
 class MainActivity : AppCompatActivity() {
@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val firstDT = firstDataClass ("Minga", 0)
+        val firstDT = FirstDataClass ("Minga", 0)
         val secondDT = firstDT.copy(name = "Artur", counter = 1)
 
         findViewById<AppCompatButton>(R.id.btn).setOnClickListener {
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun comparison (counter: Int): String {
+    private fun comparison(counter: Int): String {
         return if (counter >= 20) "20 раз или больше" else "меньше 20 раз"
     }
 
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    data class firstDataClass (val name: String, var counter: Int) {
+    data class FirstDataClass (val name: String, var counter: Int) {
         fun clicking () {
             this.counter += 1
         }
