@@ -23,11 +23,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun comparison (counter: Int): String {
-        return if (counter >= 20) {
-            "20 раз или больше"
-        } else {
-            "меньше 20 раз"
-        }
+        return if (counter >= 20) "20 раз или больше" else "меньше 20 раз"
     }
 
     data class firstDataClass (val name: String, var counter: Int) {
